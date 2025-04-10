@@ -1,0 +1,313 @@
+/* FONTS */
+@font-face{
+    font-family: 'Inter';
+    src: url('./fonts/Inter28pt-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter28pt-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pixelify Sans';
+    src: url('./fonts/PixelifySans-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pixelify Sans';
+    src: url('./fonts/PixelifySans-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* GENERAL */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding: 10rem;
+  }
+
+body{
+    font-family: 'Inter', sans-serif;
+    background-color: #1E1E1E;
+    color: #F3E8DE;
+    font-size: 1.5rem;
+}
+
+h1 {
+    font-size: clamp(2.75rem, 6vw + 1rem, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(2.25rem, 4.5vw + 0.75rem, 2.75rem);
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: clamp(1.75rem, 3.5vw + 0.5rem, 2rem);
+    margin-bottom: 1.75rem;
+}
+
+h4 {
+    font-size: clamp(1.6rem, 3.5vw + 0.5rem, 1.75rem);
+    margin-bottom: 1.65rem;
+}
+
+main {
+    margin-top: 10rem;
+}
+
+.texto-color-verde{
+    color: #3E8472;
+}
+
+.texto-color-rojo{
+    color: #C44823;
+}
+
+.texto-color-amarillo{
+    color: #db9941;
+}
+
+.texto-color-beige{
+    color: #dcc9a9;
+}
+
+.texto-color-negro{
+    color: #1E1E1E;
+}
+
+/* NAV BAR */
+
+.custom-header{
+    position: fixed;
+    background-color: #1E1E1E;
+    top: 0;
+    width: 100%;
+    font-size: 1rem;
+    z-index: 9999;
+    height: auto;
+    min-height: 80px;
+}
+
+
+.custom-nav-link,
+.custom-nav-link:link,
+.custom-nav-link:visited,
+.custom-nav-link:focus,
+.custom-nav-link:active {
+  color: #F3E8DE;
+  text-decoration: none;
+}
+
+.custom-nav-link:hover {
+  color: #db9941;
+}
+
+/* HERO (INTRO) */
+
+.custom-hero{
+    padding-top: 10rem;
+    padding-bottom: 28rem;
+    max-width: 800px;
+}
+
+/* TIEMPO DE TOMAR ACCIÓN*/
+
+.custom-accion{
+    padding-top: 0rem;
+    padding-bottom: 28rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* SOBRE CARBON BYTE*/
+
+.custom-carbon-byte{
+    padding-top: 0rem;
+    padding-bottom: 28rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.logo-carbon-byte {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.custom-letra-pixel{
+    color: #db9941;
+    font-family: 'Pixelify Sans';
+    font-size:  clamp(2.1rem, 3.5vw + 0.5rem, 2.4rem);
+}
+
+
+
+/* SERVICIOS */
+
+.custom-servicios{
+    padding-top: 0rem;
+    padding-bottom: 28rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.custom-grid-servicios {
+    grid-template-columns: 1fr;
+  }
+
+.custom-grid-servicios i {
+    font-size: 3rem;
+}
+  
+.servicio-card {
+    border-radius: 1rem;
+    background-color: #3E8472;
+    color: #1E1E1E;
+    display: flex;
+    /* organiza los elementos hijos de arriba hacia abajo */
+    flex-direction: column;
+    /* empuja el primer hijo hacia arriba y el último hacia abajo */
+    justify-content: space-between;
+    min-height: 100%;
+    max-width: 400px;
+    border: #dcc9a9 solid 1px;
+    }
+
+
+@media (min-width: 992px) {
+.custom-grid-servicios {
+    /* Crea 3 columnas, y que cada una ocupe una fracción igual del espacio disponible. */
+    /* lo mismo que 1fr 1fr 1fr; */
+    grid-template-columns: repeat(3, 1fr);
+}
+}
+
+.custom-saber-mas{
+    background-color: #1E1E1E;
+    color: #db9941;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; /* Regular */
+    font-size: 1.2rem;
+    border-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+
+.custom-saber-mas:hover{
+    color: #1E1E1E;
+    background-color: #db9941;
+}
+
+.custom-servicio-link{
+    color: #1E1E1E;
+    text-decoration: underline;
+    transition: color 0.2s ease-in-out;
+}
+
+.custom-servicio-link:hover {
+    color: #dcc9a9
+  }
+  
+
+/* CONTACTO */
+
+.custom-contacto{
+    padding-top: 0rem;
+    padding-bottom: 28rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+   
+}
+
+.custom-calendly{
+    max-width: 800px;
+    min-width: 100%;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.custom-seccion-formulario{
+    padding-top: 4rem;
+}
+
+.custom-formulario{
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-control {
+    background-color: #dcc9a9;
+    color: #1E1E1E;
+    border-radius: 0.5rem;
+    border: 2px solid #3E8472;
+}
+
+.form-control:hover {
+    background-color: #dcc9a9;
+    color: #1E1E1E;
+    }
+
+.custom-enviar-mensaje{
+    background-color: #db9941;
+    font-family: 'Inter', sans-serif;
+    color: #1E1E1E;
+    border: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.custom-enviar-mensaje:hover{
+    background-color: #3E8472;
+    font-family: 'Inter', sans-serif;
+    color: #F3E8DE;
+
+}
+
+.custom-enviar-mensaje:active{
+    background-color: #3E8472 !important;
+    color: #F3E8DE !important;
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.custom-footer{
+    color: #F3E8DE;
+}
+
+
+/*  */
+/*  */
+/*  */
+/*  *//* PESTAÑA SERVICIOS *//*  */
+
+.custom-titulo-servicio{
+    padding-top: 13rem;
+    padding-bottom: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+}
+
+.custom-pestaña-servicio{
+    padding-top: 0rem;
+    padding-bottom: 28rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
