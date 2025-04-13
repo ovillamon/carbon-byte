@@ -40,9 +40,14 @@ html {
 
 body{
     font-family: 'Inter', sans-serif;
-    background-color: #1E1E1E;
     color: #F3E8DE;
     font-size: 1.5rem;
+    background-color: #1E1E1E;
+    background-image:
+      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 8px 8px;
+
 }
 
 h1 {
@@ -311,3 +316,40 @@ main {
     padding-left: 2rem;
     padding-right: 2rem;
 }
+
+/*  */
+/*  */
+/*  */
+/* ANIMACIONES */
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      /* Efecto de subida */
+      transform: translateY(82px);
+    }
+    100% {
+      opacity: 1;
+      /* Posición inicial */
+      transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    opacity: 0;
+    /* ease-out: parte más rápido y termina lento */
+    /* forwards mantiene el estado final de la animación (opacity: 1) */
+    animation: fadeIn 1.5s ease-out forwards;
+    animation-delay: 0.8s;  
+  }
+
+.fade-in-scroll {
+opacity: 0;
+transform: translateY(0px);
+transition: opacity 1.5s ease-out;
+}
+
+.fade-in-scroll.show {
+opacity: 1;
+}
+  

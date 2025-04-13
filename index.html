@@ -1,8 +1,4 @@
-<!-- FEEDBACK -->
-<!--
- 1. CONTRASTE COLORES
--->
-
+<!-- FALTA REVISAR "HEAD" -->
 
 <!DOCTYPE html>
 <html lang="es">
@@ -48,28 +44,28 @@
       <section id="Intro">
         <div class="container px-4 text-center custom-hero">
           <div>
-            <h1 class="">
+            <h1 class="animate-fade-in">
               <span class="texto-color-verde">Medición, Análisis y Diseño</span> con perspectiva ambiental</h1>  
           </div>
       </section>
 
       <!-- ACCIÓN -->
       <section id="Acción">
-        <div class="container text-start custom-accion">
+        <div class="container text-start custom-accion fade-in-scroll">
           <div>
             <h2>Estamos<span class="texto-color-amarillo"> llegando tarde</span></h2>
           </div>
           <div>
             <p>
-              <span class="texto-color-amarillo">Actuar hoy</span> es escencial. Los <span class="">límites planetarios<sup>1</sup></span>
+              <span class="texto-color-amarillo">Actuar hoy</span> es esencial. Los <span class="">límites planetarios<sup><i class="bi bi-globe-americas" style="font-size: 0.65rem;"></i></sup></span>
               nos muestran que estamos viviendo fuera de los márgenes seguros para la humanidad y el planeta.
             </p>
             <p>
-              La <span class="texto-color-amarillo">crisis climática</span> no es nueva y muchas de sus consecuencias ya son irreversibles, pero aún estamos a tiempo de actuar con <span class="texto-color-verde">sentido y propósito </span>.
+              La <span class="texto-color-amarillo">crisis climática</span> no es nueva y muchas de sus consecuencias ya son irreversibles, pero aún estamos a tiempo de actuar con <span class="texto-color-verde">sentido y propósito</span>.
             </p>
           <div class="mt-4">
             <small class="texto-color-beige" style="font-size: 1.25rem;">
-              <em><sup>1</sup>Son las fronteras que no deberíamos cruzar para mantener un planeta habitable <a class="texto-color-rojo" href="https://www.stockholmresilience.org/research/planetary-boundaries.html" target="_blank" rel="noopener noreferrer">Stockholm Resilience Centre, Límites Planetarios</a>.</em><br>
+              <em><sup><i class="bi bi-globe-americas"></i></sup> Son las fronteras que no deberíamos cruzar para mantener un planeta habitable <a class="texto-color-rojo" href="https://www.stockholmresilience.org/research/planetary-boundaries.html" target="_blank" rel="noopener noreferrer">Stockholm Resilience Centre, Límites Planetarios</a>.</em><br>
             </small>
           </div>
         </div>
@@ -77,7 +73,7 @@
 
       <!-- CARBON BYTE -->
       <section id="Carbon-Byte">
-        <div class="container text-start custom-carbon-byte">
+        <div class="container text-start custom-carbon-byte fade-in-scroll">
           <div>
             <h2><span class="texto-color-rojo">¿</span>Cuánto sabes de tu huella<span class="texto-color-rojo">?</span></h2>
           </div>
@@ -106,7 +102,7 @@
 
       <!-- SERVICIOS -->
       <section id="Servicios" class="custom-servicios">
-        <div class="container text-start">
+        <div class="container text-start fade-in-scroll">
           <h2>Servicios</h2>
 
           <div class="d-grid gap-4 custom-grid-servicios">
@@ -149,7 +145,7 @@
       
       <!-- CONTACTO -->
       <section id="Contacto" class="custom-contacto">
-        <div class="container text-center">
+        <div class="container text-center fade-in-scroll">
           <div>
             <h2>Hola, mi nombre es Osvaldo Villagrán Montenegro</h2>
           </div>
@@ -163,7 +159,7 @@
           </div>
           <div>
             <p class="mb-5">
-              Si te interesa conversar sobre alguno de los servicios o <span class="texto-color-amarillo">explorar nuevas ideas</span>, puedes agendar una reunión o enviar un mensaje. ¡Quedo atento! Saludos.
+              Si te interesa conversar sobre alguno de los servicios o <span class="texto-color-amarillo">explorar nuevas ideas</span>, puedes agendar una reunión o enviar un mensaje.
             </p>
           </div>
 
@@ -267,6 +263,30 @@
         }
       });
     </script>
+
+    <!-- FADE IN-OUT -->
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const target = entry.target;
+    
+          if (entry.intersectionRatio > 0.1) {
+            target.classList.add('show');
+          } else {
+            target.classList.remove('show');
+          }
+        });
+      }, {
+        threshold: [0, 0.1, 0.25, 0.5, 0.75, 1.0]  // más sensible, mejor detección
+      });
+    
+      document.querySelectorAll('.fade-in-scroll').forEach(el => {
+        observer.observe(el);
+      });
+    </script>
+    
+    
+    
     
   </body>
 </html>

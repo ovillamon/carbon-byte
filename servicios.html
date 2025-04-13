@@ -44,14 +44,14 @@
       <section id="Pestaña-Servicios">
         <div class="container text-start custom-titulo-servicio">
             <div>
-                <h1><span class="texto-color-verde"> Servicios</span></h1>
+                <h1><span class="texto-color-verde animate-fade-in"> Servicios</span></h1>
             </div>
         </div>
       </section>
 
       <!-- SERVICIO 1 -->
       <section id="S1-Cuantificación">
-        <div class="container text-start custom-pestaña-servicio">
+        <div class="container text-start custom-pestaña-servicio fade-in-scroll">
             <div>
                 <h2><span class="texto-color-verde"><i class="bi bi-bar-chart"></i></span> Huella de Carbono Organizacional</h2>
             </div>
@@ -78,7 +78,7 @@
 
       <!-- SERVICIO 2 -->
       <section id="S2-Calculadora">
-        <div class="container text-start custom-pestaña-servicio">
+        <div class="container text-start custom-pestaña-servicio fade-in-scroll">
             <div>
                 <h2><span class="texto-color-verde"><i class="bi bi-calculator"></i></span> Diseño de Calculadora</h2>
             </div>
@@ -87,8 +87,9 @@
                     Diseño <span class="texto-color-amarillo">calculadoras personalizadas</span> para que las organizaciones puedan estimar su huella de carbono de manera autónoma.
                 </p>
                 <p>
-                    Este servicio es <span class="texto-color-amarillo">complementario</span> al cálculo inicial de la huella: primero cuantificamos las emisiones, y luego
-                    desarrollamos una herramienta a medida que permite replicar el proceso, adaptándolo a la realidad operativa del cliente.
+                    Este servicio es <span class="texto-color-amarillo">complementario</span> al cálculo inicial de la huella:
+                    Primero cuantifico las emisiones de tu organización, y luego desarrollo una herramienta personalizada que te
+                    permite replicar el cálculo de forma autónoma, adaptada a tu realidad operativa.
                 </p>
                 <p>
                     La calculadora se implementa en Excel con uso de macros, lo que permite una solución flexible, accesible y fácil de actualizar.
@@ -103,7 +104,7 @@
 
       <!-- SERVICIO 3 -->
       <section id="S3-Diseño-Web">
-        <div class="container text-start custom-pestaña-servicio">
+        <div class="container text-start custom-pestaña-servicio fade-in-scroll">
             <div>
                 <h2><span class="texto-color-verde"><i class="bi bi-cursor"></i></span> Diseño Web de Bajo Impacto</h2>
             </div>
@@ -128,7 +129,7 @@
 
       <!-- CONTACTO -->
       <section id="Contacto-Servicios" class="custom-contacto">
-        <div class="container text-center">
+        <div class="container text-center fade-in-scroll">
           <div>
             <h2>Hola, mi nombre es Osvaldo Villagrán Montenegro</h2>
           </div>
@@ -206,46 +207,24 @@
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-
-    <!-- SCRIPT -->
+  
+    <!-- FADE IN-OUT -->
     <script>
-      const form = document.querySelector('form');
-      const button = document.getElementById('form-button');
-    
-      form.addEventListener('submit', async function (event) {
-        event.preventDefault(); // Evita que recargue la página o redirija
-    
-        // Cambia el texto del botón y desactiva
-        button.innerText = 'Enviando...';
-        button.disabled = true;
-    
-        // Prepara los datos del formulario
-        const formData = new FormData(form);
-    
-        try {
-          const response = await fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-              'Accept': 'application/json'
-            }
-          });
-    
-          if (response.ok) {
-            button.innerText = 'Mensaje enviado';
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
           } else {
-            button.innerText = 'Error al enviar';
-            button.disabled = false;
+            entry.target.classList.remove('show');
           }
-    
-        } catch (error) {
-          console.error('Error:', error);
-          button.innerText = 'Error al enviar';
-          button.disabled = false;
-        }
+        });
+      }, {
+        threshold: 0.2  // porcentaje del elemento visible para activarse
       });
-    </script>
     
+      document.querySelectorAll('.fade-in-scroll').forEach(el => observer.observe(el));
+    </script>
+
+
   </body>
 </html>
